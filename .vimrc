@@ -1,5 +1,6 @@
 syntax enable
-colorscheme morning
+inoremap <silent> jj <ESC>
+colorscheme azuki
 
 set autoindent 
 set tabstop=4 softtabstop=4 shiftwidth=4 
@@ -12,7 +13,6 @@ let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 
 set path+=**
-set spell
 "set cursorline
 "set cursorcolumn
 set number
@@ -59,5 +59,4 @@ if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
 "}}}
-
 syntax enable
