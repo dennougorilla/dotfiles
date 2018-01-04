@@ -1,0 +1,5 @@
+[[plugins]]
+repo = 'dennougorilla/vemo.vim'
+
+[[plugins]]
+repo = 'dennougorilla/azuki.vim'
