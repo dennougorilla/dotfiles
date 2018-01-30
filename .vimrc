@@ -1,6 +1,5 @@
 syntax enable
 inoremap <silent> jj <ESC>
-colorscheme azuki
 
 set autoindent 
 set tabstop=4 softtabstop=4 shiftwidth=4 

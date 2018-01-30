@@ -3,3 +3,9 @@ repo = 'dennougorilla/vemo.vim'
 
 [[plugins]]
 repo = 'dennougorilla/azuki.vim'
+
+[[plugins]]
+repo = 'dennougorilla/vmt.vim'
+
+[[plugins]]
+repo = 'itchyny.lightline.vim'

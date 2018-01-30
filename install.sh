@@ -5,5 +5,7 @@ do
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
 
-    echo "$f"
+    ln -s $HOME/dotfiles/$f $HOME/$f
 done
+
+ln -s $HOME/dotfiles/dein.toml $HOME/dein.toml
