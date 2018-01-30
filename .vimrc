@@ -3,6 +3,8 @@ inoremap <silent> jj <ESC>
 
 set autoindent 
 set tabstop=4 softtabstop=4 shiftwidth=4 
+"set tabstop=5 softtabstop=5 shiftwidth=5 
+"set tabstop=2 softtabstop=2 shiftwidth=2 
 set expandtab
 
 set path+=**
