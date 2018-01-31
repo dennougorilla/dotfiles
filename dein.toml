@@ -8,4 +8,7 @@ repo = 'dennougorilla/azuki.vim'
 repo = 'dennougorilla/vmt.vim'
 
 [[plugins]]
-repo = 'itchyny.lightline.vim'
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
