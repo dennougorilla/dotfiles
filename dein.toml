@@ -12,3 +12,7 @@ repo = 'itchyny/lightline.vim'
 
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
