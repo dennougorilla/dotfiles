@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#set Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 chmod 755 *
 for f in .??*
 do
