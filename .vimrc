@@ -44,6 +44,7 @@ Plugin 'lambdalisue/gina.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'faith/vim-go'
 Plugin 'thinca/vim-quickrun'
+Plugin 'simeji/winresizer'
 "}}}
 
 call vundle#end()
