@@ -1,6 +1,7 @@
 syntax enable
 inoremap <silent> jj <ESC>
 
+
 set autoindent 
 set tabstop=4 softtabstop=4 shiftwidth=4 
 set expandtab
@@ -39,17 +40,36 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'dennougorilla/azuki.vim'
 Plugin 'dennougorilla/vemo.vim'
 Plugin 'dennougorilla/vmt.vim'
-Plugin 'itchyny/lightline.vim'
 Plugin 'lambdalisue/gina.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'faith/vim-go'
+Plugin 'fatih/vim-go'
+Plugin 'dhruvasagar/vim-table-mode'
+let g:table_mode_corner="|"
 Plugin 'thinca/vim-quickrun'
 Plugin 'simeji/winresizer'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'joshdick/onedark.vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'sjl/badwolf'
+Plugin 'cocopon/iceberg.vim'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'morhetz/gruvbox'
+Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
 "}}}
 
 call vundle#end()
 filetype plugin indent on
 "}}}
 
-colorscheme azuki
-syntax enable
+
+colorscheme onedark
+autocmd FileType html colorscheme onedark
+autocmd FileType go colorscheme azuki
+autocmd FileType python colorscheme azuki
+
+
+let g:airline#extensions#tabline#enabled = 1
+nmap <C-p> <Plug>AirlineSelectPrevTab
+nmap <C-n> <Plug>AirlineSelectNextTab
