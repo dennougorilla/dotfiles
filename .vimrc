@@ -28,41 +28,68 @@ set nobackup
 set writebackup
 set foldmethod=marker
 
-"Vundle {{{
-set nocompatible
-filetype off
+""Vundle {{{
+"set nocompatible
+"filetype off
+"
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"
+"Plugin 'VundleVim/Vundle.vim'
+""Plugins {{{
+"Plugin 'dennougorilla/azuki.vim'
+"Plugin 'dennougorilla/vemo.vim'
+"Plugin 'dennougorilla/vmt.vim'
+"Plugin 'lambdalisue/gina.vim'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'fatih/vim-go'
+"Plugin 'dhruvasagar/vim-table-mode'
+"let g:table_mode_corner="|"
+"Plugin 'thinca/vim-quickrun'
+"Plugin 'simeji/winresizer'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'joshdick/onedark.vim'
+"Plugin 'nanotech/jellybeans.vim'
+"Plugin 'sjl/badwolf'
+"Plugin 'cocopon/iceberg.vim'
+"Plugin 'w0ng/vim-hybrid'
+"Plugin 'morhetz/gruvbox'
+"Plugin 'tomasr/molokai'
+"Plugin 'altercation/vim-colors-solarized'
+""}}}
+"
+"call vundle#end()
+"filetype plugin indent on
+""}}}
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"Vim Plug{{{
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-"Plugins {{{
-Plugin 'dennougorilla/azuki.vim'
-Plugin 'dennougorilla/vemo.vim'
-Plugin 'dennougorilla/vmt.vim'
-Plugin 'lambdalisue/gina.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'fatih/vim-go'
-Plugin 'dhruvasagar/vim-table-mode'
-let g:table_mode_corner="|"
-Plugin 'thinca/vim-quickrun'
-Plugin 'simeji/winresizer'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'joshdick/onedark.vim'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'sjl/badwolf'
-Plugin 'cocopon/iceberg.vim'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'morhetz/gruvbox'
-Plugin 'tomasr/molokai'
-Plugin 'altercation/vim-colors-solarized'
+"Plug {{{
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'dennougorilla/azuki.vim'
+Plug 'dennougorilla/vemo.vim'
+Plug 'dennougorilla/vmt.vim'
+Plug 'lambdalisue/gina.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'fatih/vim-go'
+Plug 'thinca/vim-quickrun'
+Plug 'simeji/winresizer'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'joshdick/onedark.vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'sjl/badwolf'
+Plug 'cocopon/iceberg.vim'
+Plug 'w0ng/vim-hybrid'
+Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
 "}}}
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 "}}}
-
 
 colorscheme onedark
 autocmd FileType html colorscheme onedark
