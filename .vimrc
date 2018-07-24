@@ -28,41 +28,6 @@ set nobackup
 set writebackup
 set foldmethod=marker
 
-""Vundle {{{
-"set nocompatible
-"filetype off
-"
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"
-"Plugin 'VundleVim/Vundle.vim'
-""Plugins {{{
-"Plugin 'dennougorilla/azuki.vim'
-"Plugin 'dennougorilla/vemo.vim'
-"Plugin 'dennougorilla/vmt.vim'
-"Plugin 'lambdalisue/gina.vim'
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'fatih/vim-go'
-"Plugin 'dhruvasagar/vim-table-mode'
-"let g:table_mode_corner="|"
-"Plugin 'thinca/vim-quickrun'
-"Plugin 'simeji/winresizer'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'joshdick/onedark.vim'
-"Plugin 'nanotech/jellybeans.vim'
-"Plugin 'sjl/badwolf'
-"Plugin 'cocopon/iceberg.vim'
-"Plugin 'w0ng/vim-hybrid'
-"Plugin 'morhetz/gruvbox'
-"Plugin 'tomasr/molokai'
-"Plugin 'altercation/vim-colors-solarized'
-""}}}
-"
-"call vundle#end()
-"filetype plugin indent on
-""}}}
-
 "Vim Plug{{{
 call plug#begin('~/.vim/plugged')
 

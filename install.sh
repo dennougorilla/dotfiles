@@ -1,7 +1,6 @@
 #!/bin/bash
 
 #set Vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -13,5 +12,4 @@ do
 
     ln -s ${HOME}/dotfiles/${f} ${HOME}/${f}
 done
-ln -s ${HOME}/dotfiles/dein.toml ${HOME}/dein.toml
 echo $(tput setaf 2)Deploy dotfiles complete!. ✔︎$(tput sgr0)
