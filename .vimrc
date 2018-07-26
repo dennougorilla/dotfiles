@@ -11,6 +11,7 @@ set backspace=indent,eol,start
 "set cursorline
 "set cursorcolumn
 set number
+set undofile
 set hidden
 set visualbell
 set title
