@@ -1,10 +1,36 @@
+if has('vim_starting')
+  set encoding=utf-8
+  scriptencoding utf-8
+
+  if !has('gui_running')
+        \ && exists('&termguicolors')
+        \ && $COLORTERM ==# 'truecolor'
+    if !has('nvim')
+      let &t_8f = "\e[38;2;%lu;%lu;%lum"
+      let &t_8b = "\e[48;2;%lu;%lu;%lum"
+    endif
+    set termguicolors   
+  endif
+endif
+
+function! GitAC()
+	write
+	let result = system('git add ' . bufname(""))
+	echo result
+	let result = system('git commit -m "[write] Called GitAC"')
+	echo result
+endfunction
+
 syntax enable
+filetype indent plugin on
 inoremap <silent> jj <ESC>
 
 
+set nocompatible
 set autoindent 
-set tabstop=4 softtabstop=4 shiftwidth=4 
-set expandtab
+
+"set tabstop=4 softtabstop=4 shiftwidth=4 
+"set expandtab
 
 set path+=**
 set backspace=indent,eol,start
@@ -66,3 +92,5 @@ autocmd FileType python colorscheme azuki
 let g:airline#extensions#tabline#enabled = 1
 nmap <C-p> <Plug>AirlineSelectPrevTab
 nmap <C-n> <Plug>AirlineSelectNextTab
+
+set secure
