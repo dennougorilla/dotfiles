@@ -22,17 +22,8 @@ function! GitAC()
 	echo ' '
 	echo result
 endfunction
-
 noremap ZZ :call GitAC()<CR>
 
-function! Demo()
-  let curline = getline('.')
-  call inputsave()
-  let name = input('Enter name: ')
-  call inputrestore()
-  echo curline
-  echo name
-endfunction
 
 syntax enable
 filetype indent plugin on
