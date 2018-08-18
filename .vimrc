@@ -19,7 +19,7 @@ function! GitAC()
 	echo result
 	let msg = input('Enter commit msg: ')
 	let result = system('git commit -m' . '"'. msg .'"')
-	echo ''
+	echo 'a'
 	echo result
 endfunction
 noremap ZZ :call GitAC()<CR>
