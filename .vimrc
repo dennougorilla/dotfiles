@@ -20,7 +20,7 @@ function! GitAC()
 	let result = system('git commit -m "[write] Called GitAC"')
 	echo result
 endfunction
-noremap ZZ :call GitAC()<CR>
+noremap ZZ :call GitAC()<CR><CR>
 
 syntax enable
 filetype indent plugin on
