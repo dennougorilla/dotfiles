@@ -17,10 +17,20 @@ function! GitAC()
 	write
 	let result = system('git add ' . bufname(""))
 	echo result
-	let result = system('git commit -m "[write] Called GitAC"')
+	let msg = input('Enter commit msg: ')
+	let result = system('git commit -m' . '"'. msg .'"')
 	echo result
 endfunction
 noremap ZZ :call GitAC()<CR>
+
+function! Demo()
+  let curline = getline('.')
+  call inputsave()
+  let name = input('Enter name: ')
+  call inputrestore()
+  echo curline
+  echo name
+endfunction
 
 syntax enable
 filetype indent plugin on
