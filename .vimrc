@@ -22,6 +22,7 @@ function! GitAC()
 	echo ' '
 	echo result
 endfunction
+
 noremap ZZ :call GitAC()<CR>
 
 function! Demo()
