@@ -24,7 +24,6 @@ function! GitAC()
 endfunction
 noremap ZZ :call GitAC()<CR>
 
-
 syntax enable
 filetype indent plugin on
 inoremap <silent> jj <ESC>
@@ -33,8 +32,8 @@ inoremap <silent> jj <ESC>
 set nocompatible
 set autoindent 
 
-"set tabstop=4 softtabstop=4 shiftwidth=4 
-"set expandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 
+set expandtab
 
 set path+=**
 set backspace=indent,eol,start
@@ -45,7 +44,6 @@ set undofile
 set hidden
 set visualbell
 set title
-set t_Co=259
 set ruler
 set wrapscan
 set wildmenu
@@ -89,12 +87,14 @@ call plug#end()
 
 colorscheme onedark
 autocmd FileType html colorscheme onedark
-autocmd FileType go colorscheme azuki
-autocmd FileType python colorscheme azuki
+autocmd FileType go colorscheme onedark
+autocmd FileType python colorscheme onedark
 
 
 let g:airline#extensions#tabline#enabled = 1
 nmap <C-p> <Plug>AirlineSelectPrevTab
 nmap <C-n> <Plug>AirlineSelectNextTab
 
+set t_Co=256
+autocmd BufNewFile,BufRead *.{html,htm,vue*} set filetype=html
 set secure
