@@ -46,8 +46,6 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma'
@@ -57,6 +55,9 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: 'https://api.github.com',
+    proxyHeaders: false,
+    credentials: false
   },
 
   /*
