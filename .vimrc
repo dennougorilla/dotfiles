@@ -1,3 +1,31 @@
+"vim-lsp
+let g:asyncomplete_auto_popup = 0
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+
+if executable('gopls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'gopls',
+        \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+        \ 'whitelist': ['go'],
+        \ })
+endif
+
+if executable('flow')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'flow',
+        \ 'cmd': {server_info->['flow', 'lsp']},
+        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), '.flowconfig'))},
+        \ 'whitelist': ['javascript', 'javascript.jsx'],
+        \ })
+endif
+
 if has('vim_starting')
   set encoding=utf-8
   scriptencoding utf-8
@@ -9,7 +37,7 @@ if has('vim_starting')
       let &t_8f = "\e[38;2;%lu;%lu;%lum"
       let &t_8b = "\e[48;2;%lu;%lu;%lum"
     endif
-    set termguicolors   
+    set termguicolors
   endif
 endif
 
@@ -28,11 +56,10 @@ syntax enable
 filetype indent plugin on
 inoremap <silent> jj <ESC>
 
-
 set nocompatible
-set autoindent 
+set autoindent
 
-set tabstop=4 softtabstop=4 shiftwidth=4 
+set tabstop=4 softtabstop=4 shiftwidth=4
 set expandtab
 
 set path+=**
@@ -61,14 +88,26 @@ set foldmethod=marker
 call plug#begin('~/.vim/plugged')
 
 "Plug {{{
-Plug 'jistr/vim-nerdtree-tabs'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'natebosch/vim-lsc'
+let g:lsp_async_completion = 1
+
 Plug 'dennougorilla/azuki.vim'
-Plug 'dennougorilla/vemo.vim'
-Plug 'dennougorilla/vmt.vim'
-Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'fatih/vim-go'
-Plug 'thinca/vim-quickrun'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all' }
+Plug 'ryanolsonx/vim-lsp-javascript'
+
+Plug 'junegunn/fzf.vim'
+Plug 'mattn/emmet-vim'
+Plug 'mattn/gist-vim'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/vim-easy-align'
+
 Plug 'simeji/winresizer'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -90,7 +129,6 @@ autocmd FileType html colorscheme onedark
 autocmd FileType go colorscheme onedark
 autocmd FileType python colorscheme onedark
 
-
 let g:airline#extensions#tabline#enabled = 1
 nmap <C-p> <Plug>AirlineSelectPrevTab
 nmap <C-n> <Plug>AirlineSelectNextTab
@@ -98,3 +136,6 @@ nmap <C-n> <Plug>AirlineSelectNextTab
 set t_Co=256
 autocmd BufNewFile,BufRead *.{html,htm,vue*} set filetype=html
 set secure
+
+vnoremap <silent> <Enter> :EasyAlign<cr>
+
